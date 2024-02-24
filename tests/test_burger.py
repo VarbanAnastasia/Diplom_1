@@ -27,23 +27,23 @@ class TestBurger:
         assert ingredient in list(burger.ingredients)
 
     def test_remove_ingredient(self):
-        ingredient = Ingredient("Vegetable", "Lettuce", 0.5)
-        ingredient2 = Ingredient("Meat", "Beef", 1.5)
+        lettuce = Ingredient("Vegetable", "Lettuce", 0.5)
+        beef = Ingredient("Meat", "Beef", 1.5)
         burger = Burger()
-        burger.ingredients.append(ingredient)
-        burger.add_ingredient(ingredient2)
+        burger.ingredients.append(lettuce)
+        burger.add_ingredient(beef)
         burger.remove_ingredient(0)
-        assert ingredient not in list(burger.ingredients)
+        assert lettuce not in list(burger.ingredients)
 
     def test_move_ingredient(self):
-        ingredient = Ingredient("Vegetable", "Lettuce", 0.5)
-        ingredient2 = Ingredient("Meat", "Beef", 1.5)
+        lettuce = Ingredient("Vegetable", "Lettuce", 0.5)
+        beef = Ingredient("Meat", "Beef", 1.5)
         burger = Burger()
-        burger.ingredients.append(ingredient)
-        burger.add_ingredient(ingredient2)
+        burger.ingredients.append(lettuce)
+        burger.add_ingredient(beef)
         burger.move_ingredient(0, 1)
-        assert burger.ingredients.index(ingredient) == 1
-        assert burger.ingredients.index(ingredient2) == 0
+        assert burger.ingredients.index(lettuce) == 1
+        assert burger.ingredients.index(beef) == 0
 
     def test_get_price(self):
         bun = Bun("Sesame Bun", 1.5)

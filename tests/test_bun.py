@@ -13,3 +13,13 @@ class TestBun:
         bun = Bun("test", 10)
         assert bun.get_price() == 10
 
+    def mock_bun_get_name(self):
+        bun = Mock()
+        bun.get_name.return_value = "bulka"
+        assert bun.get_name() == "bulka"
+
+    def mock_bun_get_price(self):
+        bun = Mock()
+        bun.get_price.return_value = 10
+        assert bun.get_price() == 10
+
